@@ -6,11 +6,11 @@ int main() {
     char tablero[5][5];
     FILE *archivo;
     char nombre[10];
-    char nombre2[10];
+    char nombre2[50]; // <-- Aumentado a 50 para que quepa "Nombre: Jorge..." sin cortarse
 
     printf("Ingrese su nombre: \n");
     fgets(nombre, sizeof(nombre), stdin);
-    nombre[strcspn(nombre, "\n")] = 0; // Quita el salto de línea
+    nombre[strcspn(nombre, "\n")] = 0; // Quita el salto de línea del teclado
 
     // 1. Inicializar la matriz con guiones
     for (int i = 0; i < 5; i++) {
@@ -31,6 +31,7 @@ int main() {
         return 1;
     }
 
+    // Escribimos los datos formateados en el archivo físico
     fprintf(archivo, "Nombre: %s\n", nombre);
     fprintf(archivo, "Ian Vilchis\n\n");
 
@@ -41,17 +42,23 @@ int main() {
         }
         fprintf(archivo, "\n");
     }
-    fclose(archivo);
-    printf("Tablero guardado con exito en 'tablero.txt'.\n");
+    fclose(archivo); // Cerramos el archivo para asegurar que todo se escriba en el disco duro
+    printf("Tablero guardado con exito en 'tablero.txt'.\n\n");
 
     // 3. Abrir archivo en modo lectura ("r") para comprobar
     archivo = fopen("tablero.txt", "r");
-    if (archivo != NULL) {
-        if (fgets(nombre2, sizeof(nombre2), archivo) != NULL) {
-            printf("Leido del archivo: %s\n", nombre2);
-        }
-        fclose(archivo);
+    if (archivo == NULL) {
+        printf("Error al abrir el archivo para lectura.\n");
+        return 1;
     }
+
+    // Leemos la primera línea del archivo 
+    if (fgets(nombre2, sizeof(nombre2), archivo) != NULL) {
+        // CORREGIDO: printf estándar para mostrar el resultado en la consola
+        printf("--- Comprobacion de lectura desde el archivo .txt ---\n");
+        printf("Leido del archivo: %s", nombre2); 
+    }
+    fclose(archivo);
 
     return 0;
 }
