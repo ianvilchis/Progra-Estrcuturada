@@ -1,15 +1,15 @@
 # Actividad 1: Tipos de Datos
 
 ## Estudiante
-* [cite_start]**Nombre:** Ian Pablo Vilchis Armas [cite: 130]
-* [cite_start]**Código:** 325019822 [cite: 130]
+* **Nombre:** Ian Pablo Vilchis Armas
+* **Código:** 325019822
 * **Sección:** D04
-* [cite_start]**Materia:** Programación Estructurada [cite: 131]
-* [cite_start]**Profesor:** Jorge Ernesto López Arce Delgado [cite: 133]
-* [cite_start]**Centro Universitario:** CUCEI [cite: 128]
+* **Materia:** Programación Estructurada
+* **Profesor:** Jorge Ernesto López Arce Delgado
+* **Centro Universitario:** CUCEI
 
 ## Descripción
-[cite_start]En esta actividad declaramos variables primitivas (como int, char, float, etc.)[cite: 142], les asignamos un valor y usamos el lenguaje C para imprimir en la consola tanto su valor como su dirección de memoria en formato decimal.
+En esta actividad declaramos variables primitivas (como int, char, float, etc.), les asignamos un valor y usamos el lenguaje C para imprimir en la consola tanto su valor como su dirección de memoria en formato decimal.
 
 ## Elementos incluidos en esta carpeta
 * **codigo/main.c**: El código fuente en C que hace las impresiones.
